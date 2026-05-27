@@ -60,6 +60,7 @@ find / -name "wp-config.php" 2>/dev/null
 
 ## Ce que j'ai appris
 
+- Dans le lab EvilCorp, l'audit des permissions a permis d'identifier des fichiers world-writable utilisés comme vecteur par d'autres membres de l'équipe — la combinaison avec un cron root a suffi à escalader
 - Les fichiers critiques à vérifier systématiquement lors d'un audit de configuration
-- Comment les permissions trop larges créent des vecteurs d'escalade simples
-- L'importance de l'audit de permissions comme étape systématique
+- Comment les permissions trop larges créent des vecteurs d'escalade simples même sans exploit
+- L'importance d'automatiser cet audit (`find / -writable`) en première phase de post-accès
