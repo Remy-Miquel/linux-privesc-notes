@@ -23,7 +23,7 @@
 
 | Outil | Usage |
 |---|---|
-| LinPEAS | Audit automatisé complet de configuration Linux |
+| LinPEAS | Audit automatisé complet de configuration Linux (référence — non utilisé directement dans le lab EvilCorp) |
 | GTFOBins | Référence des binaires exploitables |
 | `sudo -l` | Droits sudo de l'utilisateur courant |
 | `find` | Audit de permissions et de binaires SUID |

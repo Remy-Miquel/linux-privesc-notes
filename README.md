@@ -42,4 +42,4 @@ Objectif : comprendre les erreurs de configuration courantes et les mesures de d
 
 Notes rédigées dans un cadre éducatif et légal.  
 Toutes les techniques documentées ont été observées sur des labs autorisés.  
-Ces notes documentent des vecteurs d'escalade à des fins défensives et de durcissement.
+Notes issues du lab EvilCorp (Jedha Essential, mai 2026) et de plateformes d'entraînement.
