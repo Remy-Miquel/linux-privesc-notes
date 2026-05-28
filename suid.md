@@ -61,7 +61,7 @@ bash -p
 ```
 
 Rencontré en lab : le binaire `find` avec bit SUID/SGID dans un répertoire utilisateur
-(pentest EvilCorp, VULN-02, CVSS 7.8) — voir le [rapport de pentest](https://github.com/Deagant/pentest-lab-report-portfolio).
+(pentest EvilCorp, VULN-02, CVSS 7.8) — voir le [rapport de pentest](https://github.com/Remy-Miquel/pentest-lab-report-portfolio).
 
 ---
 

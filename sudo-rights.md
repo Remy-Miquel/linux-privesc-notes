@@ -89,7 +89,7 @@ Même sans `NOPASSWD`, une version vulnérable de sudo peut suffire.
 | Impact | PrivEsc locale vers root |
 | Remédiation | `apt upgrade sudo` |
 
-Rencontré en lab (pentest EvilCorp, VULN-05, CVSS 7.8) — voir le [rapport de pentest](https://github.com/Deagant/pentest-lab-report-portfolio).
+Rencontré en lab (pentest EvilCorp, VULN-05, CVSS 7.8) — voir le [rapport de pentest](https://github.com/Remy-Miquel/pentest-lab-report-portfolio).
 
 ---
 
