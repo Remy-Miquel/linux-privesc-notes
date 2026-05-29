@@ -106,7 +106,8 @@ CVE-2021-3156 était exploitable sur la cible EvilCorp (VULN-05) — détail dan
 
 ## Ce que j'ai appris
 
-- `sudo -l` est la première commande à lancer après un accès initial — souvent la fin directe du chemin PrivEsc
-- Des binaires courants (vim, find, python, tar) sont exploitables en quelques secondes avec GTFOBins
-- Même une config sudo vide n'est pas suffisante si la version de sudo est vulnérable (CVE-2021-3156)
-- Pourquoi tester `NOPASSWD` + GTFOBins doit être systématique avant de chercher des vecteurs plus complexes
+- `sudo -l` est la première commande à taper après un accès initial — souvent la fin directe du chemin.
+- La version de sudo compte autant que la config. CVE-2021-3156 fonctionne même sur une config sudo vide.
+
+En lab EvilCorp on a trouvé `NOPASSWD: /usr/bin/vim` — c'est aussi courant que dangereux, et GTFOBins
+donne la commande exacte en 10 secondes.
