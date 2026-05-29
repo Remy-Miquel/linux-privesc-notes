@@ -1,7 +1,7 @@
 # Linux Privilege Escalation Notes
 
-Notes d'apprentissage sur l'élévation de privilèges Linux en environnement autorisé.  
-Objectif : comprendre les erreurs de configuration courantes et les mesures de durcissement associées.
+Notes issues des labs EvilCorp et TryHackMe — ce que j'ai réellement fait, dans l'ordre où je l'ai découvert.  
+Pas une référence exhaustive : juste les vecteurs que j'ai vus en pratique et ce qui m'a posé problème.
 
 ---
 
