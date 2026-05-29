@@ -90,6 +90,7 @@ Même sans `NOPASSWD`, une version vulnérable de sudo peut suffire.
 | Remédiation | `apt upgrade sudo` |
 
 CVE-2021-3156 était exploitable sur la cible EvilCorp (VULN-05) — détail dans le rapport de pentest.
+Score CVSS vérifié sur le rapport : `AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H` = 7.8 High.
 
 ---
 

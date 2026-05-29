@@ -62,6 +62,7 @@ bash -p
 ```
 
 Rencontré en lab : le binaire `find` avec bit SUID/SGID — c'est la VULN-02 du rapport EvilCorp (CVSS 7.8).
+Vecteur complet : `AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H` — score tiré du rapport EvilCorp mai 2026.
 
 ---
 
