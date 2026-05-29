@@ -118,9 +118,19 @@ les fichiers nommés `--checkpoint=1` et `--checkpoint-action=...` deviennent de
 
 ---
 
-## Ce que j'ai appris
+## Pourquoi ça mérite d'être regardé tôt
 
-- Pourquoi un script cron modifiable est souvent le vecteur le plus rapide après sudo — il suffit d'attendre l'exécution
-- La différence entre les 3 vecteurs : script modifiable (permissions), PATH hijacking (ordre PATH + chemin relatif), wildcard injection (expansion bash)
-- L'expansion du wildcard se passe dans le shell avant tar — ce n'est pas un bug tar, c'est le comportement normal du shell qu'on détourne
-- Pourquoi les chemins absolus et les wildcards doivent être traités comme des règles non négociables dans les scripts cron root
+Dans l'ordre classique : `sudo -l` d'abord, SUID ensuite, et si les deux ne donnent rien, `/etc/crontab`.
+L'avantage c'est que l'énumération coûte rien — n'importe quel utilisateur peut lire le fichier, donc on perd pas de temps à vérifier.
+
+Le PATH hijacking m'a surpris parce que tu touches jamais au script cron lui-même.
+Tu crées juste un fichier dans un dossier que tu contrôles, avec le bon nom, et tu attends.
+C'est root qui fait le travail pour toi.
+
+---
+
+## Ce que j'ai retenu
+
+Le script modifiable c'est évident dès qu'on voit les permissions — mais le PATH hijacking j'ai mis du temps à vraiment comprendre le mécanisme. Il faut lire `/etc/crontab` ligne par ligne, repérer qu'une commande est appelée sans chemin absolu, puis vérifier que le PATH du cron inclut un dossier contrôlable avant `/usr/bin`. Pas évident au premier regard.
+
+Le wildcard avec tar c'est encore plus tordu — l'expansion `*` est faite par le shell avant que tar reçoive quoi que ce soit. Donc c'est pas un bug tar, c'est le shell normal qu'on détourne. J'avais pas capté ça avant de le faire en pratique.
